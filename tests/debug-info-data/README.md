@@ -68,6 +68,7 @@ Test program
 ------------
 An executable linked to this library can be compiled from the `main.c` source file.
 To compile it, you can do:
+
     $ ln -s libhello_so libhello.so
     $ gcc -I. -o test main.c -L. -lhello_build_id -llttng-ust -ldl -Wl,--rpath=.
 
@@ -76,4 +77,5 @@ program and stripped to contain only the bare minimum. When running babeltrace
 with the `--debug-info-target-prefix` option pointing to the source tree of
 Babeltrace, the `my_provider:my_first_tracepoint` events should contain this
 information:
+
     debug_info = { bin = "libhello_so+0x166b", func = "baz+0x9c", src = "libhello.c:20" } }
